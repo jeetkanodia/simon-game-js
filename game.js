@@ -9,6 +9,8 @@ $(".btn").click(function (){
     userClickedPattern.push(userChosenColour);
     console.log(userClickedPattern);
     playSound(userChosenColour);
+    $("#"+userChosenColour).fadeOut(100).fadeIn(100);
+    animatePress(userChosenColour);
     if(level == userClickedPattern.length)
     checkAnswer(level);
 });
@@ -36,6 +38,7 @@ function animatePress(currentColour){
         $("#"+currentColour).removeClass('pressed');
     }, 100);
 }
+
 
 var count=0;
 $(document).keypress(function(){
